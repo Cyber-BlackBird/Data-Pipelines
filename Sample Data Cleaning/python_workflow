@@ -1,6 +1,6 @@
 import pandas as pd
 
-data1 = pd.read_csv('ABG.csv')
+data1 = pd.read_csv('flight_ledger.csv')
 data1.head()
 data1 = data1.fillna("NA")
 
@@ -76,3 +76,4 @@ data1['Flown_Status'] = l2
 data1 = data1.drop('Flown Status',axis=1)
 data1 = data1[['Booking_Date', 'Department','Pax_Name','Travel Date','Sector','Air_Line','Class','Flown_Status']]
 data1.head()
+data1.to_csv('flight_ledger_cleaned.csv', index=False)
